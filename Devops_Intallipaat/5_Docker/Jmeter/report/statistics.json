@@ -1,0 +1,34 @@
+{
+  "01_Launch_Blaze" : {
+    "transaction" : "01_Launch_Blaze",
+    "sampleCount" : 10,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 1098.8,
+    "medianResTime" : 1219.0,
+    "minResTime" : 681.0,
+    "maxResTime" : 1412.0,
+    "pct1ResTime" : 1412.0,
+    "pct2ResTime" : 1412.0,
+    "pct3ResTime" : 1412.0,
+    "throughput" : 6.25,
+    "receivedKBytesPerSec" : 8.616943359375,
+    "sentKBytesPerSec" : 3.99169921875
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 5,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 1098.8,
+    "medianResTime" : 1219.0,
+    "minResTime" : 681.0,
+    "maxResTime" : 1412.0,
+    "pct1ResTime" : 1412.0,
+    "pct2ResTime" : 1412.0,
+    "pct3ResTime" : 1412.0,
+    "throughput" : 3.50385423966363,
+    "receivedKBytesPerSec" : 4.8308021636299925,
+    "sentKBytesPerSec" : 2.23781315697267
+  }
+}

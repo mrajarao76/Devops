@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, br</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+              <stringProp name="Header.value">11111111</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">*/*</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Cookie</stringProp>
+              <stringProp name="Header.value">TS01d91b09_28=01c1d6916efecef811962fa4e71617320eae9eff7b0b38131b9a9af12e1c5fd751cb6fa7794810b77117fc7d99ec8407fa88e24c47</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">x-correlation-id</stringProp>
+              <stringProp name="Header.value">1599727727007</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">x-mob-channel-name</stringProp>
+              <stringProp name="Header.value">MOBILE</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="false">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="false">
+          <boolProp name="clearEachIteration">false</boolProp>
+          <boolProp name="useExpires">true</boolProp>
+          <boolProp name="CacheManager.controlledByThread">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;loginId&quot;: &quot;Praveen001&quot;,&#xd;
+&quot;password&quot;: &quot;Password&quot;,&#xd;
+&quot;authenticated&quot;: true,&#xd;
+&quot;forceChangePassword&quot;: true,&#xd;
+&quot;previousLoginDate&quot;: 1591541916000,&#xd;
+&quot;passcodeRegistered&quot;: true,&#xd;
+&quot;tncAcceptedVersion&quot;: &quot;1.1&quot;,&#xd;
+&quot;countryCode&quot;: &quot;AE&quot;,&#xd;
+&quot;userSegments&quot;:&quot;CONV&quot;,&#xd;
+&quot;firstName&quot;: &quot;test&quot;,&#xd;
+&quot;lastName&quot;: &quot;test&quot;,&#xd;
+&quot;mobile&quot;: &quot;0501504377&quot;,&#xd;
+&quot;email&quot;: &quot;shahbaz@mashreq.com&quot;,&#xd;
+&quot;userType&quot;: &quot;INDIVIDUAL&quot;,&#xd;
+&quot;sessionToken&quot;: &quot;10001k4STzwuS5Gww8XYYH-wutiOk5ibmefwEUm-QNiaD5mi36QDaMoLi0ceuVX3TTSr2noZHMmMCUhSIcqmWVeLUPao4n-vQjgjJteoksGnhoJzzH3glBLx1vXTlaINMEgjGKY2AzeASF-UhBf8VWcNGuFpwnisyxQpVny2DFapjhfDkbAVcpQbRFimbfuE4SUmLStXinH0LS9SHrU3tzbio9YNEsejDjFeqqL2tDepz8EJz4-MmourS64WmeLbHicEMkd6wuTKW_S8hISoUV33JX9MuiPWQSMkEkh1ui_4I51I4MKHJvVajYYfN1YH2owsTHCVXHnyhQ8E2HMf6g-UY4Qzm&quot;,&#xd;
+&quot;iamUserId&quot;: &quot;21&quot;,&#xd;
+&quot;cif&quot;: &quot;010642147&quot;,&#xd;
+&quot;forceChangeLoginId&quot;: false,&#xd;
+&quot;registeredDevices&quot;: [&quot;12345678910savaraDevice4&quot;, &quot;12345678910savaraDevice2&quot;]&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapipp.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-pre-prod/mock/api/v1/mollogin </stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authType" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapipp.mashreqbank.com/</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/ms-security-iam/api/v1/preauth?authType=1FA</stringProp>
+          <stringProp name="HTTPSampler.method"></stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_challengeToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_challengeToken </stringProp>
+            <stringProp name="RegexExtractor.regex">challengeToken&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_e2eeSid" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSid</stringProp>
+            <stringProp name="RegexExtractor.regex">e2eeSid&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_pubKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_pubKey</stringProp>
+            <stringProp name="RegexExtractor.regex">pubKey&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_randomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_randomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">randomNumber&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_oaepHashAlgo" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_oaepHashAlgo</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;oaepHashAlgo&quot;: &quot;([^&quot;]+)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="authType" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"></stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authType_Sandbox" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/users/prelogin/api/v1/molpreauth?authType=1FA</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_challengeToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_challengeToken</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;challengeToken&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_e2eeSid" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSid</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;e2eeSid&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_pubKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_pubKey</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;pubKey&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_randomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_randomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;randomNumber&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="IAF_oaepHashAlgo" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_oaepHashAlgo</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;oaepHashAlgo&quot;: &quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="authType" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"></stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Params" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/ms-security-iam/api/v1/dataport/params</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpRandomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpRandomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">dpRandomNumber&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpPublicKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKey</stringProp>
+            <stringProp name="RegexExtractor.regex">dpPublicKey&quot;: &quot;([^&quot;]+)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpPublicKeyIndex" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKeyIndex</stringProp>
+            <stringProp name="RegexExtractor.regex">dpPublicKeyIndex&quot;: ([^&quot;]+)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_e2eeSesToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSesToken</stringProp>
+            <stringProp name="RegexExtractor.regex"> &quot;e2eeSesToken&quot;: ([^&quot;]+)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Params" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">
+ </stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Params_sandbox" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/ussm/api/v1/moldataport/params</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpRandomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpRandomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpRandomNumber&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpPublicKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKey</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpPublicKey&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_dpPublicKeyIndex" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKeyIndex</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpPublicKeyIndex&quot;: (.*?),</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Params_e2eeSesToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSesToken</stringProp>
+            <stringProp name="RegexExtractor.regex"> &quot;e2eeSesToken&quot;: (.*?)\n</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Params" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">
+ </stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">//load(&quot;amdp.js&quot;);
+// load(&quot;ame2eea.js&quot;);
+// load(&quot;json2.js&quot;);  
+ 
+ 
+ //load(&quot;lib.dom.d&quot;);
+
+ ///api/ms-security-iam/api/v1/preauth?authType=1FA
+A_challengeToken = vars.get(&quot;challengeToken&quot;);
+A_e2eeSid = vars.get(&quot;e2eeSid&quot;);
+A_pubKey = vars.get(&quot;pubKey&quot;);
+A_randomNumber = vars.get(&quot;randomNumber&quot;);
+A_oaepHashAlgo = vars.get(&quot;oaepHashAlgo&quot;);
+
+log.info(&quot;-----------&gt;Auth API challengeToken found = &quot; + A_challengeToken); 
+log.info(&quot;-----------&gt;Auth API e2eeSid found = &quot; + A_e2eeSid); 
+log.info(&quot;-----------&gt;Auth API pubKey found = &quot; + A_pubKey); 
+log.info(&quot;-----------&gt;Auth API randomNumber found = &quot; + A_randomNumber); 
+log.info(&quot;-----------&gt;Auth API oaepHashAlgo found = &quot; + A_oaepHashAlgo); 
+
+///api/ms-security-iam//api/v1/dataport/params
+
+A_dpRandomNumber = vars.get(&quot;dpRandomNumber&quot;);
+A_dpPublicKey = vars.get(&quot;dpPublicKey&quot;);
+A_dpPublicKeyIndex = vars.get(&quot;dpPublicKeyIndex&quot;);
+A_e2eeSesToken = vars.get(&quot;e2eeSesToken&quot;);
+
+log.info(&quot;-----------&gt;Auth API dpRandomNumber found = &quot; + A_dpRandomNumber); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyd found = &quot; + A_dpPublicKey); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyIndex found = &quot; + A_dpPublicKeyIndex); 
+log.info(&quot;-----------&gt;Auth API e2eeSesToken found = &quot; + A_e2eeSesToken); 
+
+//*for loading file from local of your jmeter place script in bin folder then 
+ 
+ 
+ load(&quot;amdp.js&quot;);
+// load(&quot;ame2eea.js&quot;);
+// load(&quot;json2.js&quot;);
+ 
+ //var challengeToken_1 = &quot;challengeToken&quot;;
+ //var e2eeSid_1 =  &quot;e2eeSid&quot;
+
+//log.info(&quot; e2eeSid_1   &quot;+e2eeSid_1);
+
+
+//var encPassword = ame2eea.encryptPinForAM(e2eeSid, pubKey, randomNumber, password, oaepHashAlgo);
+		
+var cipherParams = &quot;{\&quot;hash\&quot;: true, \&quot;hashAlgo\&quot;: \&quot;SHA-256\&quot;, \&quot;symmetric\&quot;: true,\&quot;symmetricAlgo\&quot;:\&quot;AES\&quot;,\&quot;symmetricKeyLength\&quot;: 256}&quot;;
+
+var encPasswordLegacy =  amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, password, e2eeSesToken);
+
+vars.put(&quot;encPassword_Value&quot;,encPassword);
+vars.put(&quot;encPasswordLegacy_Value&quot;,encPasswordLegacy);
+
+
+
+
+
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">///api/ms-security-iam/api/v1/preauth?authType=1FA
+challengeToken = vars.get(&quot;c_challengeToken&quot;);
+e2eeSid = vars.get(&quot;c_e2eeSid&quot;);
+pubKey = vars.get(&quot;c_pubKey&quot;);
+randomNumber = vars.get(&quot;c_randomNumber&quot;);
+oaepHashAlgo = vars.get(&quot;c_oaepHashAlgo&quot;);
+
+///api/ms-security-iam//api/v1/dataport/params
+
+dpRandomNumber = vars.get(&quot;c_dpRandomNumber&quot;);
+dpPublicKey = vars.get(&quot;c_dpPublicKey&quot;);
+dpPublicKeyIndex = vars.get(&quot;c_dpPublicKeyIndex&quot;);
+e2eeSesToken = vars.get(&quot;c_e2eeSesToken&quot;);
+
+
+log.info(&quot;-----------&gt;Auth API challengeToken found = &quot; + challengeToken); 
+log.info(&quot;-----------&gt;Auth API e2eeSid found = &quot; + e2eeSid); 
+log.info(&quot;-----------&gt;Auth API pubKey found = &quot; + pubKey); 
+log.info(&quot;-----------&gt;Auth API randomNumber found = &quot; + randomNumber); 
+log.info(&quot;-----------&gt;Auth API oaepHashAlgo found = &quot; + oaepHashAlgo); 
+
+log.info(&quot;-----------&gt;Auth API dpRandomNumber found = &quot; + dpRandomNumber); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyd found = &quot; + dpPublicKey); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyIndex found = &quot; + dpPublicKeyIndex); 
+log.info(&quot;-----------&gt;Auth API e2eeSesToken found = &quot; + e2eeSesToken); 
+
+//*for loading file from local of your jmeter place script in bin folder then 
+
+// load(&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js&quot;); 
+load(&quot;amdp.js&quot;);
+load(&quot;ame2eea.js&quot;);
+//load(&quot;amdp.js&quot;);
+// load(&quot;json2.js&quot;);
+
+//var challengeToken_1 = &quot;challengeToken&quot;;
+ //var e2eeSid_1 =  &quot;e2eeSid&quot;
+
+//log.info(&quot; e2eeSid_1   &quot;+e2eeSid_1);
+//encPassword = vars.get(&quot;123456&quot;);
+password = vars.get(&quot;Password&quot;);
+value = vars.get(&quot;OTP&quot;);
+var encPassword = ame2eea.encryptPinForAM(e2eeSid, pubKey, randomNumber, password, oaepHashAlgo);
+		
+var cipherParams = &quot;{\&quot;hash\&quot;: true, \&quot;hashAlgo\&quot;: \&quot;SHA-256\&quot;, \&quot;symmetric\&quot;: true,\&quot;symmetricAlgo\&quot;:\&quot;AES\&quot;,\&quot;symmetricKeyLength\&quot;: 256}&quot;;
+
+var encPasswordLegacy =  amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, password, e2eeSesToken);
+var encOtp = amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, value, e2eeSesToken);
+
+
+vars.put(&quot;encPassword_Value&quot;,encPassword);
+vars.put(&quot;encPasswordLegacy_Value&quot;,encPasswordLegacy);
+vars.put(&quot;OTP_Value&quot;,encOtp)
+
+
+
+ </stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">///api/ms-security-iam/api/v1/preauth?authType=1FA
+A_challengeToken = vars.get(&quot;challengeToken&quot;);
+A_e2eeSid = vars.get(&quot;e2eeSid&quot;);
+A_pubKey = vars.get(&quot;pubKey&quot;);
+A_randomNumber = vars.get(&quot;randomNumber&quot;);
+A_oaepHashAlgo = vars.get(&quot;oaepHashAlgo&quot;);
+
+log.info(&quot;-----------&gt;Auth API challengeToken found = &quot; + A_challengeToken); 
+log.info(&quot;-----------&gt;Auth API e2eeSid found = &quot; + A_e2eeSid); 
+log.info(&quot;-----------&gt;Auth API pubKey found = &quot; + A_pubKey); 
+log.info(&quot;-----------&gt;Auth API randomNumber found = &quot; + A_randomNumber); 
+log.info(&quot;-----------&gt;Auth API oaepHashAlgo found = &quot; + A_oaepHashAlgo); 
+
+///api/ms-security-iam//api/v1/dataport/params
+
+A_dpRandomNumber = vars.get(&quot;dpRandomNumber&quot;);
+A_dpPublicKey = vars.get(&quot;dpPublicKey&quot;);
+A_dpPublicKeyIndex = vars.get(&quot;dpPublicKeyIndex&quot;);
+A_e2eeSesToken = vars.get(&quot;e2eeSesToken&quot;);
+
+log.info(&quot;-----------&gt;Auth API dpRandomNumber found = &quot; + A_dpRandomNumber); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyd found = &quot; + A_dpPublicKey); 
+log.info(&quot;-----------&gt;Auth API dpPublicKeyIndex found = &quot; + A_dpPublicKeyIndex); 
+log.info(&quot;-----------&gt;Auth API e2eeSesToken found = &quot; + A_e2eeSesToken); 
+
+//*for loading file from local of your jmeter place script in bin folder then 
+ 
+ 
+ load(&quot;amdp.js&quot;);
+// load(&quot;ame2eea.js&quot;);
+// load(&quot;json2.js&quot;);
+ 
+ //var challengeToken_1 = &quot;challengeToken&quot;;
+ //var e2eeSid_1 =  &quot;e2eeSid&quot;
+
+//log.info(&quot; e2eeSid_1   &quot;+e2eeSid_1);
+
+
+//var encPassword = ame2eea.encryptPinForAM(e2eeSid, pubKey, randomNumber, password, oaepHashAlgo);
+		
+var cipherParams = &quot;{\&quot;hash\&quot;: true, \&quot;hashAlgo\&quot;: \&quot;SHA-256\&quot;, \&quot;symmetric\&quot;: true,\&quot;symmetricAlgo\&quot;:\&quot;AES\&quot;,\&quot;symmetricKeyLength\&quot;: 256}&quot;;
+
+var encPasswordLegacy =  amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, password, e2eeSesToken);
+
+vars.put(&quot;encPassword_Value&quot;,encPassword);
+vars.put(&quot;encPasswordLegacy_Value&quot;,encPasswordLegacy);
+
+
+
+
+
+</stringProp>
+        </JSR223PostProcessor>
+        <hashTree/>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JavaScript" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">//*for loading file from local of your jmeter place script in bin folder then 
+ 
+ 
+/*
+A_challengeToken = vars.get(&quot;challengeToken&quot;);
+log.info(&quot;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&gt;Auth API challengeToken found = &quot; + A_challengeToken); 
+A_dpRandomNumber = vars.get(&quot;dpRandomNumber&quot;);
+log.info(&quot;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&gt;Auth API dpRandomNumber found = &quot; + A_dpRandomNumber); 
+A_dpPublicKey = vars.get(&quot;dpPublicKey&quot;);
+log.info(&quot;$$$$$$$$$$$$$$$$$$$&gt;Auth API dpPublicKeyd found = &quot; + A_dpPublicKey); 
+*/
+ load(&quot;amdp.js&quot;);
+ load(&quot;ame2eea.js&quot;);
+ load(&quot;json2.js&quot;);
+ 
+ //var challengeToken_1 = &quot;challengeToken&quot;;
+ //var e2eeSid_1 =  &quot;e2eeSid&quot;
+
+//log.info(&quot; e2eeSid_1   &quot;+e2eeSid_1);
+
+/*
+var encPassword = ame2eea.encryptPinForAM(e2eeSid, pubKey, randomNumber, password, oaepHashAlgo);
+		
+var cipherParams = &quot;{\&quot;hash\&quot;: true, \&quot;hashAlgo\&quot;: \&quot;SHA-256\&quot;, \&quot;symmetric\&quot;: true,\&quot;symmetricAlgo\&quot;:\&quot;AES\&quot;,\&quot;symmetricKeyLength\&quot;: 256}&quot;;
+
+var encPasswordLegacy =  amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, password, e2eeSesToken);
+
+vars.put(&quot;encPassword_Value&quot;,encPassword);
+vars.put(&quot;encPasswordLegacy_Value&quot;,encPasswordLegacy);
+
+*/</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loginId&quot;:&quot;Card1006&quot;,&quot;encPassword&quot;:&quot;${encPassword_Value}&quot;,&quot;challengeToken&quot;:&quot;${c_challengeToken}&quot;,&quot;encPasswordLegacy&quot;:&quot;${encPasswordLegacy_Value}&quot;,&quot;dpPublicKeyIndex&quot;:6,&quot;dpRandomNumber&quot;:&quot;${c_dpRandomNumber}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/ussm/api/v1/mollogin</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Authorization" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">AccessToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="X-Auth-token" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">X-Auth-Token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <Arguments guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="Password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Mash123$</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">Password</stringProp>
+              </elementProp>
+              <elementProp name="OTP" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">OTP</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login_OTP" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loginId&quot;:&quot;Card1006&quot;,&quot;encPassword&quot;:&quot;${encPassword_Value}&quot;,&quot;challengeToken&quot;:&quot;${c_challengeToken}&quot;,&quot;encPasswordLegacy&quot;:&quot;${encPasswordLegacy_Value}&quot;,&quot;dpPublicKeyIndex&quot;:6,&quot;dpRandomNumber&quot;:&quot;${c_dpRandomNumber}&quot;,&quot;OTP&quot;:&quot;${OTP_Value}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/ussm/api/v1/mollogin</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Authorization" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">AccessToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="X-Auth-token" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">X-Auth-Token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <Arguments guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="Password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Mash123$</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">Password</stringProp>
+              </elementProp>
+              <elementProp name="OTP" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">OTP</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;loginId&quot;: &quot;Praveen007&quot;,&#xd;
+&quot;password&quot;: &quot;Password&quot;,&#xd;
+&quot;authenticated&quot;: true,&#xd;
+&quot;forceChangePassword&quot;: true,&#xd;
+&quot;previousLoginDate&quot;: 1591541916000,&#xd;
+&quot;passcodeRegistered&quot;: true,&#xd;
+&quot;tncAcceptedVersion&quot;: &quot;1.1&quot;,&#xd;
+&quot;countryCode&quot;: &quot;AE&quot;,&#xd;
+&quot;userSegments&quot;:&quot;CONV&quot;,&#xd;
+&quot;firstName&quot;: &quot;test&quot;,&#xd;
+&quot;lastName&quot;: &quot;test&quot;,&#xd;
+&quot;mobile&quot;: &quot;0501504377&quot;,&#xd;
+&quot;email&quot;: &quot;shahbaz@mashreq.com&quot;,&#xd;
+&quot;userType&quot;: &quot;INDIVIDUAL&quot;,&#xd;
+&quot;sessionToken&quot;: &quot;10001k4STzwuS5Gww8XYYH-wutiOk5ibmefwEUm-QNiaD5mi36QDaMoLi0ceuVX3TTSr2noZHMmMCUhSIcqmWVeLUPao4n-vQjgjJteoksGnhoJzzH3glBLx1vXTlaINMEgjGKY2AzeASF-UhBf8VWcNGuFpwnisyxQpVny2DFapjhfDkbAVcpQbRFimbfuE4SUmLStXinH0LS9SHrU3tzbio9YNEsejDjFeqqL2tDepz8EJz4-MmourS64WmeLbHicEMkd6wuTKW_S8hISoUV33JX9MuiPWQSMkEkh1ui_4I51I4MKHJvVajYYfN1YH2owsTHCVXHnyhQ8E2HMf6g-UY4Qzm&quot;,&#xd;
+&quot;iamUserId&quot;: &quot;21&quot;,&#xd;
+&quot;cif&quot;: &quot;010642147&quot;,&#xd;
+&quot;forceChangeLoginId&quot;: false,&#xd;
+&quot;registeredDevices&quot;: [&quot;12345678910savaraDevice4&quot;, &quot;12345678910savaraDevice2&quot;]&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/mock/api/v1/mollogin</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Authorization" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">AccessToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="X-Auth-token" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">X-Auth-Token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="JSON Format" enabled="true"/>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Entitlements" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">sandboxapi.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/digital-studio/external-uat/users/api/v1/entitlements</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1626464367503,681,01_Launch_Blaze,200,OK,Thread Group 1-4,text,true,,1441,654,5,5,https://blazedemo.com/,677,0,485
+1626464367502,681,01_Launch_Blaze,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-4,,true,,1441,654,5,5,null,677,9,485
+1626464367116,1385,01_Launch_Blaze,200,OK,Thread Group 1-2,text,true,,1508,654,4,4,https://blazedemo.com/,1384,0,878
+1626464367115,1385,01_Launch_Blaze,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,1508,654,4,4,null,1384,2,878
+1626464367706,797,01_Launch_Blaze,200,OK,Thread Group 1-5,text,true,,1350,654,4,4,https://blazedemo.com/,796,0,282
+1626464367704,797,01_Launch_Blaze,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-5,,true,,1350,654,4,4,null,796,2,282
+1626464367100,1412,01_Launch_Blaze,200,OK,Thread Group 1-1,text,true,,1333,654,2,2,https://blazedemo.com/,1412,0,890
+1626464366927,1412,01_Launch_Blaze,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,1333,654,2,2,null,1412,174,890
+1626464367308,1219,01_Launch_Blaze,200,OK,Thread Group 1-3,text,true,,1427,654,1,1,https://blazedemo.com/,1219,0,679
+1626464367307,1219,01_Launch_Blaze,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,1427,654,1,1,null,1219,1,679

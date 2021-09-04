@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PICTURES=$(ls *jpeg)
+DATE=$(date +%F)
+
+for PICTURE in $PICTURES
+do
+	echo "Renaming  ${PICTURE} to ${DATE}-${PICTURE}"
+	
+done

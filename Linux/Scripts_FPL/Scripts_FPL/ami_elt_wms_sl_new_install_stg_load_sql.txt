@@ -1,0 +1,131 @@
+\set etl_batch_id `echo \'$ETLBatchID\'::integer`
+
+BEGIN TRANSACTION;
+
+\echo truncating table ami_stage.wms_sl_new_install_stg ...
+
+select ami_stage.truncate('ami_stage.wms_sl_new_install_stg');
+
+\echo Inserting into table ami_stage.wms_sl_new_install_stg ...
+
+insert into ami_stage.wms_sl_new_install_stg
+select
+case when isdec_cd_wr='f' then NULL else ext.cd_wr::decimal end,
+loc_num::char(5),
+case when isdec_loc_seq_num='f' then NULL else ext.loc_seq_num::decimal end,
+tp_job,
+case when dt_699_complete_isdate='f' then NULL else ext.dt_699_complete::timestamp without time zone end,
+mntc_code,
+grid_num,
+tln_num,
+map_num,
+fix_styl,
+lamp_type,
+fix_wattage,
+brkt_len,
+voltage_level,
+addr_ln_1,
+loc_dtl,
+etl_ins_dttm,
+:etl_batch_id
+from
+(select
+cd_wr,
+loc_num,
+loc_seq_num,
+tp_job,
+dt_699_complete,
+mntc_code,
+grid_num,
+tln_num,
+map_num,
+fix_styl,
+lamp_type,
+fix_wattage,
+brkt_len,
+voltage_level,
+addr_ln_1,
+loc_dtl,
+etl_ins_dttm,
+
+coalesce(nullif(ltrim(rtrim(cd_wr)), ''), 't') as isnull_cd_wr,
+coalesce(nullif(ltrim(rtrim(loc_num)), ''), 't') as isnull_loc_num,
+coalesce(nullif(ltrim(rtrim(loc_seq_num)), ''), 't') as isnull_loc_seq_num,
+coalesce(nullif(ltrim(rtrim(etl_ins_dttm)), ''), 't') as isnull_etl_ins_dttm,
+
+coalesce(nullif(coalesce(ltrim(rtrim(loc_seq_num)),'1'),'' ),'1') ~ E'^-?[0-9]*\\.?[0-9]*$'  as isdec_loc_seq_num,
+coalesce(nullif(coalesce(ltrim(rtrim(CD_WR)),'1'),'' ),'1') ~ E'^-?[0-9]*\\.?[0-9]*$'  as isdec_cd_wr,
+coalesce(nullif(coalesce(ltrim(rtrim(dt_699_complete)),'01/01/9999 01:01:01'),'' ),'01/01/9999 01:01:01') 
+~ '[0-9]{1,2}/[0-9]{1,2}/[0-9]{4} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}|[0-9]{4}-[0-9]{1,2}-[0-9]{1,2} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}' as dt_699_complete_isdate
+
+from
+(select
+CD_WR,
+LTRIM(RTRIM(NO_POINT)) as loc_num,
+NO_POINT_SEQ as loc_seq_num,
+TP_JOB,
+TS_OPER_LAST_UPDTD as dt_699_complete,
+CD_OWNERSHIP as mntc_code,
+translate(ltrim(rtrim(CD_GRID)),'-','') as grid_num,
+translate(ltrim(rtrim(CD_TLN)),'-','') as tln_num,
+translate(ltrim(rtrim(NO_MAP)),'-','') as map_num,
+Ltrim(rtrim(CD_TYPE_FIXTURE)) as fix_styl,
+LTRIM(RTRIM(CD_LGT_SYM)) as lamp_type,
+LTRIM(RTRIM(DS_APPLICATION)) as fix_wattage,
+LTRIM(RTRIM(CD_BKT_LEN)) as brkt_len,
+LTRIM(RTRIM(CD_VOLTAGE)) as voltage_level,
+ltrim(rtrim(DS_STREET)) as addr_ln_1,
+ltrim(rtrim(DS_ADD_DETAILS)) as loc_dtl,
+current_timestamp::timestamp without time zone as etl_ins_dttm
+from ami_stage.ext_wms_sl_new_install_stg)a)ext;
+
+\echo inserting into error table ...
+
+insert into AMI.AMI_PBLM_ERR_TBL
+(PBLM_ERR_ID
+,PBLM_TIMESTMP
+,SRC_SYS_NAME
+,INTRFC
+,ETL_PRCS_NAME
+,INPT_IMG
+,PRCS_ERR_MSG
+,REF_KEY
+,REF_KEY_DS
+,ETL_BATCH_ID
+)
+select  
+'1111' as pblm_err_id
+,CURRENT_TIMESTAMP	as	pblm_timestmp
+,'wms_sl_new_install_stg'	as	src_sys_name
+,'wms_sl_new_install'	as 	intrfc
+,'ami_elt_wms_sl_new_install_stg_load.sql'	as	etl_prcs_name
+,coalesce(ext.cd_wr, '')||'|'||coalesce(ext.loc_num, '')||'|'||coalesce(ext.loc_seq_num, '')||'|'||coalesce(ext.dt_699_complete, '') as inpt_img
+,coalesce(case when ext.isnull_cd_wr = 't' or ext.isdec_cd_wr='f' then ' ERROR:identifier is invalid,' end, '')||
+coalesce(case when ext.isnull_loc_num = 't' then ' ERROR:loc_num is invalid,' end, '')||
+coalesce(case when ext.isnull_loc_seq_num = 't' or ext.isdec_loc_seq_num='f' then ' ERROR:loc_seq_num is invalid,' end, '')||
+coalesce(case when ext.dt_699_complete_isdate = 'f' then ' Warning:dt_699_complete is invalid,' end, '')
+as PRCS_ERR_MSG
+,coalesce(ext.cd_wr, '')||'|'||coalesce(ext.loc_num, '')||'|'||coalesce(ext.loc_seq_num, '') as REF_KEY
+,'cd_wr|loc_num|loc_seq_num|etl_ins_dttm' as REF_KEY_DS
+,:etl_batch_id as etl_batch_id
+from
+(
+select
+cd_wr,
+NO_POINT as loc_num,
+NO_POINT_SEQ as loc_seq_num,
+TS_OPER_LAST_UPDTD as dt_699_complete,
+coalesce(nullif(ltrim(rtrim(cd_wr)), ''), 't') as isnull_cd_wr,
+coalesce(nullif(ltrim(rtrim(NO_POINT)), ''), 't') as isnull_loc_num,
+coalesce(nullif(ltrim(rtrim(NO_POINT_SEQ)), ''), 't') as isnull_loc_seq_num,
+coalesce(nullif(coalesce(ltrim(rtrim(NO_POINT_SEQ)),'1'),'' ),'1') ~ E'^-?[0-9]*\\.?[0-9]*$'  as isdec_loc_seq_num,
+coalesce(nullif(coalesce(ltrim(rtrim(CD_WR)),'1'),'' ),'1') ~ E'^-?[0-9]*\\.?[0-9]*$'  as isdec_cd_wr,
+coalesce(nullif(coalesce(ltrim(rtrim(TS_OPER_LAST_UPDTD)),'01/01/9999 01:01:01'),'' ),'01/01/9999 01:01:01') 
+~ '[0-9]{1,2}/[0-9]{1,2}/[0-9]{4} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}|[0-9]{4}-[0-9]{1,2}-[0-9]{1,2} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}' as dt_699_complete_isdate
+from ami_stage.ext_wms_sl_new_install_stg)ext
+where ext.isnull_cd_wr='t' or ext.isnull_loc_num='t' or ext.isnull_loc_seq_num='t' or  ext.dt_699_complete_isdate='f' or
+ext.isdec_loc_seq_num='f' or ext.isdec_cd_wr='f' or ext.dt_699_complete_isdate='f';
+
+\copy (select 'SUCCESS') to '/home/ami0app/ami_scripts/bin/temp/wms_sl_new_install_stg.txt';
+
+COMMIT;

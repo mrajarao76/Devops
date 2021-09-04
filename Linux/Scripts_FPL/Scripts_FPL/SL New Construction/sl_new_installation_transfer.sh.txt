@@ -1,0 +1,17 @@
+#! /usr/bin/ksh
+
+#########################################################################################
+# This script triggers the extract_txfr.sh script for SLNI Transfer process.
+#########################################################################################
+TS=`date '+%Y%m%d_%H%M%S'`
+RUNDATE=`date '+%m%d%Y'`
+echo "${RUNDATE}: SL NEW Instalation Transfer process Triggered:" > /informatica/InfaFiles/stage/ami/logs/sl_new_installation_transfer_cron_${TS}.log
+
+sh /home/ami0app/ami_scripts/extracts/scripts/extract_txfr.sh extract_control_file SLNI street_light_new_installation 1>>/informatica/InfaFiles/stage/ami/logs/sl_new_installation_transfer_cron_${TS}.log 2>&1
+
+if [ `echo $?` -ne 0 ];then
+        echo "${RUNDATE}: SL NEW Instalation Transfer process Failed " >> /informatica/InfaFiles/stage/ami/logs/sl_new_installation_transfer_cron_${TS}.log
+        exit 1
+fi
+echo "${RUNDATE}: SL NEW Instalation Transfer process Succeeded" >> /informatica/InfaFiles/stage/ami/logs/sl_new_installation_transfer_cron_${TS}.log
+exit 0;

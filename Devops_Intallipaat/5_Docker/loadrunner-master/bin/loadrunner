@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'loadrunner'
+require 'loadrunner/command_line'
+
+begin
+  Loadrunner::CommandLine.execute ARGV
+rescue => e
+  STDERR.puts "#{e.class} - #{e.message}"
+end

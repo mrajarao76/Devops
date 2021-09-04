@@ -1,0 +1,21 @@
+#! /usr/bin/ksh
+
+#########################################################################################
+# This script triggers the gen_extract_wrapper.sh script for SL_NI extract process.
+#########################################################################################
+TS=`date '+%Y%m%d_%H%M%S'`
+RUNDATE=`date '+%m%d%Y'`
+echo "${RUNDATE}: SL NEW Instalation process Triggered:" > /informatica/InfaFiles/stage/ami/logs/sl_new_installation_extr_sql${TS}.log
+sh /home/ami0app/ami_scripts/extracts/scripts/gen_extract_wrapper.sh extract_control_file SLNI sl_new_installation_extr_sql.sh 1>>/informatica/InfaFiles/stage/ami/logs/sl_new_installation_extr_sql${TS}.log 2>&1
+
+if [ `echo $?` -ne 0 ];then
+        echo "${RUNDATE}: SL NEW Instalation Extract process Failed " >> /informatica/InfaFiles/stage/ami/logs/sl_new_installation_extr_sql${TS}.log
+        exit 1
+fi
+echo "${RUNDATE}: SL NEW Instalation Extract process Succeeded" >> /informatica/InfaFiles/stage/ami/logs/sl_new_installation_extr_sql${TS}.log
+#psql -d ${PGDATABASE} -U ${PGUSER} -h ${PGHOST} -p ${PGPORT} -w -c "update ami_stage.streetlight_new_instalation_1 set PRCS_FLAG ='Y' WHERE PRCS_FLAG ='N' AND RMV_FLAG ='N';"
+#if [ `echo $?` -ne 0 ];then
+ #       echo "${RUNDATE}: SL_NI Update AMI_STAGE.STREETLIGHT_FIXTURE_CHANGE Failed " >> /informatica/InfaFiles/stage/ami/logs/sl_fixture_change_transfer_cron_${TS}.log
+#       exit 1
+#fi
+exit 0;

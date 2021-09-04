@@ -1,0 +1,72 @@
+AWS account
+-------------
+aws.amazon.com/free
+12 months--free tier(able to use free tier for free)
+
+Steps:
+
+1. Provide Email id, set password, provide account name-->click on next
+
+2. Provide contact details(Personal. Name, contact no. address,country, state, postal code)--> click next
+
+3. Make payment(Card details--> make payment of 2rs.)
+
+4. verfiy phone no.
+
+5. provide basic info.
+
+
+Launching Instance(getting on AWS)
+------------------------------
+EC2:server=vm=instance
+Click on Launch instance
+
+1. choose AMI -- choosing the OS (ubuntu)
+
+2. Choose Instance type-- how much cPU we need Ram(t2.micro)
+
+3. Configure your instance details--> number of instance:1/2/3
+
+4. To add Storage: by default it was 8 GB--> we can exceed if we want
+
+5. To add--> Naming our Instance(key=Name, Value=server)
+
+6. Configure Security Group--> we already had SSH(which will help us to connect to our server, we'll change the source to "Anywhere") + we need to add a new rule [Add All Traffic source - Anywhere].
+
+7. Review all the selection and finally Launch the instance.
+
+While launching the instance we had to create a key pair, so in my case name i provided aws--> aws.pem
+
+My instances was created.
+
+Connecting to instance:
+---------------------------------
+1 method via AWS Management console
+select the instance which u want to connect--click on connect option and then click on connect.
+
+2 method via ssh client(putty)  putty.org
+ [putty configuration]
+ session--public address of our instance
+ connection --200 keep alive time
+ connection-->ssh-->auth-->we need to select the key file(.ppk)
+
+{putty key generator}
+click on load-->select the .pem file that you got while launching the instance--> click open.
+Click on Save Private key--> give n save
+
+On puuty select that .ppk file and click open and then you'll get connected.
+
+If you are using ubuntu OS the you need to login as ubuntu, and if amazon Linux the it ec2-user.
+--------------------------------------
+EC2--> 750 hrs/month--free service--750 hrs+ 
+
+1 server - 1hr--> running --logged--> tomm at 7 am --->1 hr--> [24 hrs] (2 hrs) 1 24hrs
+
+3 servers--- 1hr ---3hrs..3/726--> 723hrs 
+
+LMS Walkthrough:
+-------------------------------------
+support@intellipaat.com---assignment over the mail
+
+
+https://github.com/gkdevops/devops-prerequisites

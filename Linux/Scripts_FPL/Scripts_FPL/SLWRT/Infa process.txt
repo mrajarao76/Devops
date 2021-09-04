@@ -1,0 +1,9 @@
+sh /home/ami0app/ami_scripts/bin/ami_elt_slwr_wms_details_ora_wrapper.sh
+sh /home/ami0app/ami_scripts/bin/ami_elt_slwr_wms_details_stg_wrapper.sh
+
+sh /home/ami0app/ami_scripts/bin/ami_elt_tgt_table_load_process.sh wms_slwrs_details_audit_ins touch_files UPD
+sh /home/ami0app/ami_scripts/bin/ami_elt_src_file_wrt_process.sh wms_slwrs_details WMS/slwrs
+
+$InputFileName_wms_slwrs=/informatica/InfaFiles/stage/ami/WMS/slwrs/wms_slwrs_details.txt
+
+file tLoading to oracle table

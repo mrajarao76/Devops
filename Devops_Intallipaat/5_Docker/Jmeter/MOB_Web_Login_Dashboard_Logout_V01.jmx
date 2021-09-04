@@ -1,0 +1,2529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blazemeter test plan" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.17. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers"/>
+      </HeaderManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">D:/Others/apache-jmeter-5.3/bin/Userid.txt</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.thread</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">Userid</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="Password" elementType="Argument">
+            <stringProp name="Argument.name">Password</stringProp>
+            <stringProp name="Argument.value">Mash123$</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OTP" elementType="Argument">
+            <stringProp name="Argument.name">OTP</stringProp>
+            <stringProp name="Argument.value">123456</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://digital-uat.mashreq.com/onlinebanking" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">none</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">0.0</stringProp>
+            <stringProp name="ConstantTimer.delay">0.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">21.200000000000003</stringProp>
+            <stringProp name="ConstantTimer.delay">42.400000000000006</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/config.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/config.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">715.6</stringProp>
+            <stringProp name="ConstantTimer.delay">1431.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/assets/fonts/font.css" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/assets/fonts/font.css</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">2.0</stringProp>
+            <stringProp name="ConstantTimer.delay">4.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/css/2.96f957f9.chunk.css" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/css/2.96f957f9.chunk.css</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">0.4</stringProp>
+            <stringProp name="ConstantTimer.delay">0.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/js/2.d929ef61.chunk.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/js/2.d929ef61.chunk.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">703.6</stringProp>
+            <stringProp name="ConstantTimer.delay">1407.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/js/main.9e2c55f3.chunk.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/js/main.9e2c55f3.chunk.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">608.4</stringProp>
+            <stringProp name="ConstantTimer.delay">1216.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/adrum/adrum-4.5.9.2098.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/adrum/adrum-4.5.9.2098.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">20.400000000000002</stringProp>
+            <stringProp name="ConstantTimer.delay">40.800000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/js/14.fe2a2094.chunk.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/js/14.fe2a2094.chunk.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">1526.8000000000002</stringProp>
+            <stringProp name="ConstantTimer.delay">3053.6000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/assets/fonts/gilroy/Gilroy-Bold.woff2" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/assets/fonts/gilroy/Gilroy-Bold.woff2</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/assets/fonts/font.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">63.2</stringProp>
+            <stringProp name="ConstantTimer.delay">126.4</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/assets/fonts/gilroy/Gilroy-Medium.woff2" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/assets/fonts/gilroy/Gilroy-Medium.woff2</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/assets/fonts/font.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">6.4</stringProp>
+            <stringProp name="ConstantTimer.delay">12.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/assets/fonts/gilroy/Gilroy-Semibold.woff2" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/assets/fonts/gilroy/Gilroy-Semibold.woff2</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/assets/fonts/font.css</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">34.0</stringProp>
+            <stringProp name="ConstantTimer.delay">68.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/adrum/adrum-ext.0f18582aadae64fbc73c6dcb04bb96c6.js" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/adrum/adrum-ext.0f18582aadae64fbc73c6dcb04bb96c6.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">33.6</stringProp>
+            <stringProp name="ConstantTimer.delay">67.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/media/banner1.fea4c558.png" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/media/banner1.fea4c558.png</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/webp,image/apng,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">352.0</stringProp>
+            <stringProp name="ConstantTimer.delay">704.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://172.24.246.226:7001/eumcollector/beacons/browser/v2/EUM-AAB-AUK/adrum" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">172.24.246.226</stringProp>
+          <stringProp name="HTTPSampler.port">7001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">eumcollector/beacons/browser/v2/EUM-AAB-AUK/adrum</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">172.24.246.226:7001</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">2860</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">text/plain</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">367.6</stringProp>
+            <stringProp name="ConstantTimer.delay">735.2</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/ussm/api/v1/molpreauth?authType=1FA" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="authType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">authType</stringProp>
+                <stringProp name="Argument.value">1FA</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/ussm/api/v1/molpreauth</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">f00cd58e-c384-48</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">7254.8</stringProp>
+            <stringProp name="ConstantTimer.delay">14509.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="challengeToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_challengeToken</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;challengeToken&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="e2eeSid" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSid</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;e2eeSid&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="pubKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_pubKey</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;pubKey&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="randomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_randomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;randomNumber&quot;:&quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="oaepHashAlgo" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_oaepHashAlgo</stringProp>
+            <stringProp name="RegexExtractor.regex">oaepHashAlgo&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/ussm/api/v1/moldataport/params" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/ussm/api/v1/moldataport/params</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">f82d2b24-e16c-4a</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">2.4000000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">4.800000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dpRandomNumber" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpRandomNumber</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpRandomNumber&quot;:&quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dpPublicKey" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKey</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpPublicKey&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dpPublicKeyIndex" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_dpPublicKeyIndex</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;dpPublicKeyIndex&quot;:(.*?),</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="e2eeSesToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_e2eeSesToken</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;e2eeSesToken&quot;:(.*?)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">
+challengeToken = vars.get(&quot;c_challengeToken&quot;);
+e2eeSid = vars.get(&quot;c_e2eeSid&quot;);
+pubKey = vars.get(&quot;c_pubKey&quot;);
+randomNumber = vars.get(&quot;c_randomNumber&quot;);
+oaepHashAlgo = vars.get(&quot;c_oaepHashAlgo&quot;);
+
+dpRandomNumber = vars.get(&quot;c_dpRandomNumber&quot;);
+dpPublicKey = vars.get(&quot;c_dpPublicKey&quot;);
+dpPublicKeyIndex = vars.get(&quot;c_dpPublicKeyIndex&quot;);
+e2eeSesToken = vars.get(&quot;c_e2eeSesToken&quot;);
+
+log.info(&quot;-----------&gt;Auth API challengeToken found = &quot; + challengeToken);
+log.info(&quot;-----------&gt;Auth API e2eeSid found = &quot; + e2eeSid);
+log.info(&quot;-----------&gt;Auth API pubKey found = &quot; + pubKey);
+log.info(&quot;-----------&gt;Auth API randomNumber found = &quot; + randomNumber);
+log.info(&quot;-----------&gt;Auth API oaepHashAlgo found = &quot; + oaepHashAlgo);
+log.info(&quot;-----------&gt;Auth API dpRandomNumber found = &quot; + dpRandomNumber);
+log.info(&quot;-----------&gt;Auth API dpPublicKeyd found = &quot; + dpPublicKey);
+log.info(&quot;-----------&gt;Auth API dpPublicKeyIndex found = &quot; + dpPublicKeyIndex);
+log.info(&quot;-----------&gt;Auth API e2eeSesToken found = &quot; + e2eeSesToken);
+
+
+password = vars.get(&quot;Password&quot;);
+value = vars.get(&quot;OTP&quot;);
+
+load(&quot;amdp.js&quot;);
+load(&quot;ame2eea.js&quot;);
+
+                         
+
+var cipherParams = &quot;{\&quot;hash\&quot;: true, \&quot;hashAlgo\&quot;: \&quot;SHA-256\&quot;, \&quot;symmetric\&quot;: true,\&quot;symmetricAlgo\&quot;:\&quot;AES\&quot;,\&quot;symmetricKeyLength\&quot;: 256}&quot;;
+ 
+var encPasswordLegacy =  amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, password, e2eeSesToken);
+var encOtp = amdp.encrypt(cipherParams, dpPublicKey, dpRandomNumber, value, e2eeSesToken);
+var encPassword = ame2eea.encryptPinForAM(e2eeSid, pubKey, randomNumber, password, oaepHashAlgo);
+
+
+vars.put(&quot;encPasswordLegacy_Value&quot;,encPasswordLegacy);
+vars.put(&quot;encPassword_Value&quot;,encPassword);
+vars.put(&quot;OTP_Value&quot;,encOtp);
+
+
+
+
+
+
+
+
+
+
+ </stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.mashreqbank.com/api/gql?sc_apikey=26132235-13D1-4359-AF56-89B10F8D5EBD&amp;query=%7Bsearch%28rootItem%3A%20%22%7B1D690C96-BD58-41F2-BBBD-EED3EFD05BB0%7D%22%2C%20fieldsEqual%3A%20%5B%7Bname%3A%20%22title%22%2C%20value%3A%20%22first-time-login-online%22%7D%5D%2Clanguage%3A%22en%22%29%20%7Bresults%20%7Bitems%20%7Bitem%20%7Bid%20name%20version%20%7D%7D%7D%7D%7D" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="sc_apikey" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">sc_apikey</stringProp>
+                <stringProp name="Argument.value">26132235-13D1-4359-AF56-89B10F8D5EBD</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="query" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">query</stringProp>
+                <stringProp name="Argument.value">%7Bsearch%28rootItem%3A%20%22%7B1D690C96-BD58-41F2-BBBD-EED3EFD05BB0%7D%22%2C%20fieldsEqual%3A%20%5B%7Bname%3A%20%22title%22%2C%20value%3A%20%22first-time-login-online%22%7D%5D%2Clanguage%3A%22en%22%29%20%7Bresults%20%7Bitems%20%7Bitem%20%7Bid%20name%20version%20%7D%7D%7D%7D%7D</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">www.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">api/gql</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name=":method" elementType="Header">
+                <stringProp name="Header.name">:method</stringProp>
+                <stringProp name="Header.value">GET</stringProp>
+              </elementProp>
+              <elementProp name=":authority" elementType="Header">
+                <stringProp name="Header.name">:authority</stringProp>
+                <stringProp name="Header.value">www.mashreqbank.com</stringProp>
+              </elementProp>
+              <elementProp name=":scheme" elementType="Header">
+                <stringProp name="Header.name">:scheme</stringProp>
+                <stringProp name="Header.value">https</stringProp>
+              </elementProp>
+              <elementProp name=":path" elementType="Header">
+                <stringProp name="Header.name">:path</stringProp>
+                <stringProp name="Header.value">/api/gql?sc_apikey=26132235-13D1-4359-AF56-89B10F8D5EBD&amp;query=%7Bsearch%28rootItem%3A%20%22%7B1D690C96-BD58-41F2-BBBD-EED3EFD05BB0%7D%22%2C%20fieldsEqual%3A%20%5B%7Bname%3A%20%22title%22%2C%20value%3A%20%22first-time-login-online%22%7D%5D%2Clanguage%3A%22en%22%29%20%7Bresults%20%7Bitems%20%7Bitem%20%7Bid%20name%20version%20%7D%7D%7D%7D%7D</stringProp>
+              </elementProp>
+              <elementProp name="accept" elementType="Header">
+                <stringProp name="Header.name">accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="user-agent" elementType="Header">
+                <stringProp name="Header.name">user-agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="origin" elementType="Header">
+                <stringProp name="Header.name">origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-site" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-site</stringProp>
+                <stringProp name="Header.value">cross-site</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-mode" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-dest" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="referer" elementType="Header">
+                <stringProp name="Header.name">referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="accept-encoding" elementType="Header">
+                <stringProp name="Header.name">accept-encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="accept-language" elementType="Header">
+                <stringProp name="Header.name">accept-language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">30.0</stringProp>
+            <stringProp name="ConstantTimer.delay">60.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/ussm/api/v1/mollogin" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;encPassword&quot;:&quot;${encPassword_Value}&quot;,&quot;dpPublicKeyIndex&quot;:&quot;${c_dpPublicKeyIndex}&quot;,&quot;dpRandomNumber&quot;:&quot;${c_dpRandomNumber}&quot;,&#xd;
+&quot;encPasswordLegacy&quot;:&quot;${encPasswordLegacy_Value}&quot;,&quot;challengeToken&quot;:&quot;${c_challengeToken}&quot;,&quot;loginId&quot;:&quot;${Userid}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/ussm/api/v1/mollogin</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">1475</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">e09b1169-8b89-45</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">46.0</stringProp>
+            <stringProp name="ConstantTimer.delay">92.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="AccessToken" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">c_accessToken</stringProp>
+            <stringProp name="RegexExtractor.regex">,&quot;accessToken&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="X-Auth-Token" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">XAuthToken</stringProp>
+            <stringProp name="RegexExtractor.regex">X-Auth-Token: (.*?)\n</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Authorization" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">Authorization</stringProp>
+            <stringProp name="RegexExtractor.regex">Authorization: Bearer (.*?)\n</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="TEST_CUSTOMER" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">TEST_CUSTOMER</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;fullName&quot;:&quot;TEST_CUSTOMER_(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/users/api/v1/entitlements" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/users/api/v1/entitlements</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">448dffa7-4589-4b</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">${XAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${Authorization}</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">732.8000000000001</stringProp>
+            <stringProp name="ConstantTimer.delay">1465.6000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/js/8.63277606.chunk.js" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/js/8.63277606.chunk.js</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">26.400000000000002</stringProp>
+            <stringProp name="ConstantTimer.delay">52.800000000000004</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/kycind/api/v1/customer/profile/expiry" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/kycind/api/v1/customer/profile/expiry</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">72948364-d01b-40</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">1069.2</stringProp>
+            <stringProp name="ConstantTimer.delay">2138.4</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/dashboard/api/v1/summary/cards" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/dashboard/api/v1/summary/cards</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">a96f3ecf-a536-4f</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2947.2000000000003</stringProp>
+            <stringProp name="ConstantTimer.delay">5894.400000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/dashboard/api/v1/summary/insurance" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/dashboard/api/v1/summary/insurance</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">264ca0c2-7341-46</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3934.4</stringProp>
+            <stringProp name="ConstantTimer.delay">7868.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/dashboard/api/v1/summary/account-loan-deposit" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/dashboard/api/v1/summary/account-loan-deposit</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">7ecf5c34-c9a4-47</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3263.6000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">6527.200000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/dashboard/api/v1/summary/mmc" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/dashboard/api/v1/summary/mmc</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">fd0b5ea4-e8cd-45</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3162.8</stringProp>
+            <stringProp name="ConstantTimer.delay">6325.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/dashboard/api/v1/summary/rewards" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/dashboard/api/v1/summary/rewards</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">f4bcee93-2631-42</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">42.800000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">85.60000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/beneficiary-api/v1/beneficiary/groupType/money-transfer" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/beneficiary-api/v1/beneficiary/groupType/money-transfer</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">5d66e0f7-e5c1-4b</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">53.2</stringProp>
+            <stringProp name="ConstantTimer.delay">106.4</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/api/v1/investments/globaltrading" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/api/v1/investments/globaltrading</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">2a487533-f783-42</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">badbd5c0-189f-4d2a-a72a-dd5e45f519af</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTeWVkMTAxMCIsInNjb3BlIjoiTU9MX1VTRVIiLCJTRVNTSU9OIjoiYmFkYmQ1YzAtMTg5Zi00ZDJhLWE3MmEtZGQ1ZTQ1ZjUxOWFmIiwiaGFzaCI6ImJmNTE3YmU2MzIwYzkzNjk2ZmM5NTgzOTA2OTcyNTVhIiwidXNlcm5hbWUiOiJTeWVkMTAxMCIsImV4cCI6MTYwMTgxMzMyNX0.Tfi1H6gOOZzTZdAIVEbBefPAS_YmrAcwz32_4dev0Zo6ucWCZnPXg8Z-C5PCRzAW9duHBJb2rPpdjPnY52SfWg</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">7503.200000000001</stringProp>
+            <stringProp name="ConstantTimer.delay">15006.400000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/static/media/card_activation.fc9e1964.png" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/static/media/card_activation.fc9e1964.png</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/webp,image/apng,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/dashboard/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">5096.0</stringProp>
+            <stringProp name="ConstantTimer.delay">10192.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://contentdelivery.mashreqbank.com/channel/app-banners/signout-banner.png" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">contentdelivery.mashreqbank.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">channel/app-banners/signout-banner.png</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name=":method" elementType="Header">
+                <stringProp name="Header.name">:method</stringProp>
+                <stringProp name="Header.value">GET</stringProp>
+              </elementProp>
+              <elementProp name=":authority" elementType="Header">
+                <stringProp name="Header.name">:authority</stringProp>
+                <stringProp name="Header.value">contentdelivery.mashreqbank.com</stringProp>
+              </elementProp>
+              <elementProp name=":scheme" elementType="Header">
+                <stringProp name="Header.name">:scheme</stringProp>
+                <stringProp name="Header.value">https</stringProp>
+              </elementProp>
+              <elementProp name=":path" elementType="Header">
+                <stringProp name="Header.name">:path</stringProp>
+                <stringProp name="Header.value">/channel/app-banners/signout-banner.png</stringProp>
+              </elementProp>
+              <elementProp name="user-agent" elementType="Header">
+                <stringProp name="Header.name">user-agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="accept" elementType="Header">
+                <stringProp name="Header.name">accept</stringProp>
+                <stringProp name="Header.value">image/webp,image/apng,image/*,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-site" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-site</stringProp>
+                <stringProp name="Header.value">cross-site</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-mode" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-dest" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="referer" elementType="Header">
+                <stringProp name="Header.name">referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/signout</stringProp>
+              </elementProp>
+              <elementProp name="accept-encoding" elementType="Header">
+                <stringProp name="Header.name">accept-encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="accept-language" elementType="Header">
+                <stringProp name="Header.name">accept-language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">3283.6000000000004</stringProp>
+            <stringProp name="ConstantTimer.delay">6567.200000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://digital-uat.mashreq.com/onlinebanking/api/ussm/api/v1/mollogout" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">digital-uat.mashreq.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">onlinebanking/api/ussm/api/v1/mollogout</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">digital-uat.mashreq.com</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="X-CORRELATION-ID" elementType="Header">
+                <stringProp name="Header.name">X-CORRELATION-ID</stringProp>
+                <stringProp name="Header.value">61cd9d6f-b2c3-43</stringProp>
+              </elementProp>
+              <elementProp name="X-Auth-token" elementType="Header">
+                <stringProp name="Header.name">X-Auth-token</stringProp>
+                <stringProp name="Header.value">${XAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${Authorization}</stringProp>
+              </elementProp>
+              <elementProp name="ADRUM" elementType="Header">
+                <stringProp name="Header.name">ADRUM</stringProp>
+                <stringProp name="Header.value">isAjax:true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="X-MOB-CHANNEL-NAME" elementType="Header">
+                <stringProp name="Header.name">X-MOB-CHANNEL-NAME</stringProp>
+                <stringProp name="Header.value">WEB</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://digital-uat.mashreq.com/onlinebanking/signout</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">16.8</stringProp>
+            <stringProp name="ConstantTimer.delay">33.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

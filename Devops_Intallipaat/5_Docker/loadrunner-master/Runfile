@@ -1,0 +1,26 @@
+require "runfile-tasks"
+
+require_relative 'lib/loadrunner'
+
+title   "Loadrunner Developer Toolbelt"
+summary "Runfile tasks for building the Loadrunner gem"
+version Loadrunner::VERSION
+
+RunfileTasks::RubyGems.all 'loadrunner'
+RunfileTasks::Testing.rspec
+RunfileTasks::Docs.rdoc
+
+help   "Run YARD server"
+action :yard do
+  run "yard server -p3000 -B0.0.0.0 -r"
+end
+
+help   "Prepare YARD documentation"
+action :yardoc do
+  run "yard - README.md"
+end
+
+help   "Generate changelog"
+action :changelog do
+  exec 'github_changelog_generator --user DannyBen --project loadrunner --no-http-cache'
+end
